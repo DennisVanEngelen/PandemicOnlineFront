@@ -23,12 +23,15 @@ export function LoginUser(properties: any) : any
         <div className="BackGround">
         <Form onSubmit={(e) => {
             e.preventDefault();
-            axios.post(`http://localhost:8080/api/Login/userLogin`, {username, password})
+            const payload = {username,password}
+            axios.post(`http://localhost:8080/login/u`,payload)
                 .then(res => {
-                    setUser(res.data)
-                    properties.GetUserData(User)
-                    console.log(res.data)
-                    console.log(User)  
+                    if(res.data === true){
+                        console.log(res.data)
+                    // properties.GetUserData(User)
+                    // console.log(res.data)
+                    // console.log(User)  
+                    }
                     
                 })}}>
 
@@ -48,7 +51,7 @@ export function LoginUser(properties: any) : any
                                     <Form.Control
                                         type="text"
                                         id= "Username"
-                                        className="textbox"
+                                        className="username"
                                         value={username}
                                         onChange={(e) => {
                                             setUsername(e.target.value)
@@ -67,7 +70,7 @@ export function LoginUser(properties: any) : any
                             <Form.Control
                                 type="password"
                                 id= "Password"
-                                className="textbox"
+                                className="password"
                                 value={password}
                                 onChange={(e) => {
                                     setPassword(e.target.value)
@@ -78,7 +81,7 @@ export function LoginUser(properties: any) : any
                     </div>
                     <div className="linebottom"></div>
                     <div className="padding">
-                     <Button className="loginButton" type="submit">Login</Button>
+                     <Button className="loginButton" type="submit">Log-in</Button>
                      <Link to="/Register"><Button className="loginButton" type="submit">Register</Button></Link>
 
                     </div>         

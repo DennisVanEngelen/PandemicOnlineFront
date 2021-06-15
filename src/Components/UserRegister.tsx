@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Form, InputGroup, Button } from 'react-bootstrap';
+import { Form, InputGroup, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
@@ -17,6 +17,7 @@ export function RegisterUser(properties: any) : any
     const [username, setUsername] = useState<string>("")
     const [password, setPassword] = useState<string>("")
     const [emailadress, setEmailadress] = useState<string>("")
+    const [ding, setDing] = useState<string>("")
 
     const [RegisterUser, setRegisterUser] = useState<IRegisterUser>()
 
@@ -25,8 +26,10 @@ export function RegisterUser(properties: any) : any
         <div className="BackGround">
         <Form onSubmit={(e) => {
             e.preventDefault();
-            axios.post(`http://localhost:8080/api/User/addUser`, {username, password, emailadress})
+            axios.post(`http://localhost:8080/user/`, {username, password, emailadress})
                 .then(res => {
+
+                    setDing(res.data)
                     console.log(res.data)
                     
                 })}}>
@@ -34,8 +37,9 @@ export function RegisterUser(properties: any) : any
             <div className="Userbox">
                 <Form.Group >
                     <div className="padding" >
+    
                         <Form.Label>
-                        <p className="title">Register</p>
+                        <p className="title">Registration</p>
                         </Form.Label>
                         <div className="lineup"></div>
                         <Form.Label>
@@ -46,7 +50,7 @@ export function RegisterUser(properties: any) : any
                                     <Form.Control
                                         type="text"
                                         id= "Username"
-                                        className="textbox"
+                                        className="username"
                                         value={username}
                                         onChange={(e) => {
                                             setUsername(e.target.value)
@@ -65,7 +69,7 @@ export function RegisterUser(properties: any) : any
                             <Form.Control
                                 type="password"
                                 id= "Password"
-                                className="textbox"
+                                className="password"
                                 value={password}
                                 onChange={(e) => {
                                     setPassword(e.target.value)
@@ -82,7 +86,7 @@ export function RegisterUser(properties: any) : any
                                     <Form.Control
                                         type="text"
                                         id= "Emailadress"
-                                        className="textbox"
+                                        className="email"
                                         value={emailadress}
                                         onChange={(e) => {
                                             setEmailadress(e.target.value)
@@ -93,7 +97,7 @@ export function RegisterUser(properties: any) : any
                             </div>
                     <div className="linebottom"></div>
                     <div className="padding">
-                     <Button className="loginButton" type="submit">Register</Button>
+                     <Button className="registerButton" type="submit">Register</Button>
                     </div>   
                     <div className = "padding">
                     <Link to="/Login"><Button className="loginButton" type="submit">Login</Button></Link>

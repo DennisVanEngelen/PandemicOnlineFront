@@ -56,13 +56,44 @@
 .log:active:active{
     background-color: #17324c;
 }
+.registerButton{
+    color: #F7F7F7;
+    border-radius: 3px;
+    border: 0px;
+    background-color:#8e9647;
+    padding: 10px 10px;
+    min-width: 150px;
+    font-size: 15px;
+}
+
+.registerButton:hover{
+    background-color: #55532f;
+}
 .padding{
     padding: 20px;
 }
 
-.textbox{
+.username{
     left:10px;
     font-size:16px;
+    font-weight: 600;
+    height: 30px;
+    min-width: 150px;
+    border: 0.75px solid #d6d6d6;
+    text-indent: 15px;
+}
+.password{
+    left:10px;
+    font-size:16px;
+    font-weight: 600;
+    height: 30px;
+    min-width: 150px;
+    border: 0.75px solid #d6d6d6;
+    text-indent: 15px;
+}
+.email{
+    left:10px;
+    font-size:16px; 
     font-weight: 600;
     height: 30px;
     min-width: 150px;

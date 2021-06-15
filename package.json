@@ -22,7 +22,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress": "cypress open -- project ./e2e -- config baseUrl=http://localhost/:3000,chromeWebSecurity=false"
   },
   "eslintConfig": {
     "extends": [
@@ -46,6 +47,7 @@
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
     "@types/react-router-dom": "^5.1.7",
-    "@types/websocket": "^1.0.2"
+    "@types/websocket": "^1.0.2",
+    "cypress": "^7.5.0"
   }
 }
