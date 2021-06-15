@@ -26,7 +26,8 @@ export function RegisterUser(properties: any) : any
         <div className="BackGround">
         <Form onSubmit={(e) => {
             e.preventDefault();
-            axios.post(`http://localhost:8080/user/`, {username, password, emailadress})
+            const payload = {username, password, emailadress}
+            axios.post(`http://localhost:8080/user/`, payload )
                 .then(res => {
 
                     setDing(res.data)

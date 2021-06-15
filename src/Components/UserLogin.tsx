@@ -82,6 +82,7 @@ export function LoginUser(properties: any) : any
                     <div className="linebottom"></div>
                     <div className="padding">
                      <Button className="loginButton" type="submit">Log-in</Button>
+                     
                      <Link to="/Register"><Button className="loginButton" type="submit">Register</Button></Link>
 
                     </div>         
@@ -94,3 +95,4 @@ export function LoginUser(properties: any) : any
     </div>
     );
 }
+

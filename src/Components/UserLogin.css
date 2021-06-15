@@ -9,65 +9,65 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: #004a91;
+    background-color: #590a86;
 }
 .Box{
     margin: auto;
-    padding: 20px;
+    padding: 30px;
     height: margin;
     width: margin;
-    background-color: #F7F9F9;
+    background-color: #666969;
     border-radius: 25px;
 }
 .Userbox{
     position: fixed;
     top: 20%;
-    left: 50%;
+    left: 45%;
     margin-top: -50px;
     margin-left: -150px;
-    background-color:burlywood;
-    box-shadow: 0 0.3em 1em #000;
+    background-color:rgb(222, 63, 236);
+    box-shadow: 0 0.3em 1em rgba(0, 0, 0, 0.884);
     display: block;
     border-radius: 20px;
     padding: 10px;
-    min-width: 300px;
+    min-width: 200px;
 }
 
 
 .label{
-    font-family:Arial;
+    font-family:Verdana;
     font-size: 20px;
     font-weight: 400;
 }
 
 .loginButton{
-    color: #F7F7F7;
+    color: #e5dde7;
     border-radius: 3px;
     border: 0px;
-    background-color:#8e9647;
+    background-color:#8b22a5;
     padding: 10px 10px;
     min-width: 150px;
     font-size: 15px;
 }
 
 .loginButton:hover{
-    background-color: #55532f;
+    background-color: #bbb775;
 }
 .log:active:active{
-    background-color: #17324c;
+    background-color: #19a061;
 }
 .registerButton{
-    color: #F7F7F7;
+    color: #e5dde7;
     border-radius: 3px;
     border: 0px;
-    background-color:#8e9647;
+    background-color:#8b22a5;
     padding: 10px 10px;
     min-width: 150px;
     font-size: 15px;
 }
 
 .registerButton:hover{
-    background-color: #55532f;
+    background-color: #e2df99;
 }
 .padding{
     padding: 20px;
@@ -79,7 +79,7 @@
     font-weight: 600;
     height: 30px;
     min-width: 150px;
-    border: 0.75px solid #d6d6d6;
+    border: 0.75px solid #9b7070;
     text-indent: 15px;
 }
 .password{
@@ -88,7 +88,7 @@
     font-weight: 600;
     height: 30px;
     min-width: 150px;
-    border: 0.75px solid #d6d6d6;
+    border: 0.75px solid #9b7070;
     text-indent: 15px;
 }
 .email{
@@ -101,7 +101,9 @@
     text-indent: 15px;
 }
 .title{
-    font-family:Arial;
+    color:rgb(222, 63, 236);
+    background-color: #53b327;
+    font-family:Verdana;
     font-size: 25px;
     font-weight: 400;
 }

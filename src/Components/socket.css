@@ -8,10 +8,10 @@ body{
 }
 .title{
     text-align: center;
-    width: 100vh;
+    width: 50vh;
     padding: 2%;
-    background-color: #91d5ff;
-    color: #efefef;
+    color: #e5dde7;
+    background-color:#8b22a5;
 }
 
 .bottom{

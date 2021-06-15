@@ -17,6 +17,9 @@ function App(this: any) : any {
           <Route path="/Register">
             <RegisterUser/>
           </Route>
+          <Route path="/Socket">
+            <Socket/>
+          </Route>
           <Route path = "/Login">
             <LoginUser GetUserData = { GetLoggedUser.bind(this) } properties = {{ Username: "", Password: "" }}/>
           </Route>
