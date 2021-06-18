@@ -14,8 +14,8 @@ const client = new W3CWebSocket('ws://127.0.0.1:8000')
 export default class Socket extends Component{
 
     state = {
-        userName: '',
-        isLoggedIn: false,
+        userName: localStorage.getItem("username"),
+        isLoggedIn: true,
         messages: []
     }
     onButtonClicked = (value) => {
@@ -52,7 +52,7 @@ export default class Socket extends Component{
                 {this.state.isLoggedIn ?
                 <div>
                     <div className = "title">
-                        <Text type ="secondary" style = {{fontSize: '36px'}}>Websocket</Text>
+                        <Text type ="secondary" style = {{fontSize: '36px'}}>Chatroom</Text>
                         </div>
                         <div style={{ display: 'flex', flexDirection: 'column', paddingBottom: 50 }} id="messages">
             {this.state.messages.map(message => 
@@ -84,7 +84,7 @@ export default class Socket extends Component{
                         placeholder = "Enter Username"
                         enterButton = "Login"
                         size = "large"
-                        onSearch = {value => this.setState({isLoggedIn : true, userName: value})} 
+                        onSearch = {value => this.setState({isLoggedIn : true, userName: localStorage.getItem("username")})} 
                     />
                 </div>
             }

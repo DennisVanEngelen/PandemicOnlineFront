@@ -3,25 +3,30 @@ import React, { useState } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { LoginUser, IUser } from './Components/UserLogin';
 import { RegisterUser, IRegisterUser} from './Components/UserRegister';
+import { HomePage } from './Components/HomePage';
 import Socket from './Components/socket';
+import { Lobbies } from './Components/Lobbies';
+import NavBar from './Components/NavBar';
 
-function App(this: any) : any {
-
-  const [User, setLoggedUser] = useState<IUser>()
-  const GetLoggedUser = () => {setLoggedUser(User)}
+function App(){
   
   return (
     <div className="App">
       <Router>
+      <NavBar/>
         <Switch>
+
           <Route path="/Register">
             <RegisterUser/>
           </Route>
-          <Route path="/Socket">
+          <Route path="/Chat">
             <Socket/>
           </Route>
           <Route path = "/Login">
-            <LoginUser GetUserData = { GetLoggedUser.bind(this) } properties = {{ Username: "", Password: "" }}/>
+            <LoginUser properties = {{ Username: "", Password: "" }}/>
+          </Route>
+          <Route path = "/Lobbies">
+            <Lobbies/>
           </Route>
         </Switch>
      </Router>

@@ -3,7 +3,7 @@ import { Form, InputGroup, Button } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
-import './UserLogin.css'
+import './panOnline.css'
 
 export interface IUser 
 {
@@ -24,10 +24,12 @@ export function LoginUser(properties: any) : any
         <Form onSubmit={(e) => {
             e.preventDefault();
             const payload = {username,password}
-            axios.post(`http://localhost:8080/login/u`,payload)
+            axios.post(`http://localhost:8080/login/user`,payload)
                 .then(res => {
-                    if(res.data === true){
-                        console.log(res.data)
+                    if(res.data !== 0){
+                        localStorage.setItem("userid",res.data)
+                        localStorage.setItem("username",username)
+                        window.location.href = 'http://localhost:3000/Lobbies'
                     // properties.GetUserData(User)
                     // console.log(res.data)
                     // console.log(User)  
@@ -37,7 +39,6 @@ export function LoginUser(properties: any) : any
 
             <div className="Userbox">
                 <Form.Group >
-                <Link to="/socket"><Button className="loginButton" type="submit">Chat</Button></Link>
                     <div className="padding" >
                         <Form.Label>
                         <p className="title">Login</p>
@@ -82,12 +83,7 @@ export function LoginUser(properties: any) : any
                     <div className="linebottom"></div>
                     <div className="padding">
                      <Button className="loginButton" type="submit">Log-in</Button>
-                     
-                     <Link to="/Register"><Button className="loginButton" type="submit">Register</Button></Link>
-
                     </div>         
-
-
                     </div>
                 </Form.Group>
              </div>

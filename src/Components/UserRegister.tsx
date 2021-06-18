@@ -3,7 +3,7 @@ import { Form, InputGroup, Button, Alert } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import './UserLogin.css'
+import './panOnline.css'
 
 export interface IRegisterUser 
 {
@@ -27,7 +27,7 @@ export function RegisterUser(properties: any) : any
         <Form onSubmit={(e) => {
             e.preventDefault();
             const payload = {username, password, emailadress}
-            axios.post(`http://localhost:8080/user/`, payload )
+            axios.post(`http://localhost:8080/api/user`, payload )
                 .then(res => {
 
                     setDing(res.data)
@@ -99,10 +99,7 @@ export function RegisterUser(properties: any) : any
                     <div className="linebottom"></div>
                     <div className="padding">
                      <Button className="registerButton" type="submit">Register</Button>
-                    </div>   
-                    <div className = "padding">
-                    <Link to="/Login"><Button className="loginButton" type="submit">Login</Button></Link>
-                        </div>      
+                    </div>     
                     </div>
                 </Form.Group>
              </div>

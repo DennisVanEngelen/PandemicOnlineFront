@@ -1,5 +1,5 @@
 .BackGround{
-    min-height: 1920px;
+    min-height: 940px;
     min-width: 100%;
     background-position: center center;
     background-repeat: no-repeat;
@@ -67,6 +67,39 @@
 }
 
 .registerButton:hover{
+    background-color: #e2df99;
+}
+
+.navButtonOne{
+    color: #e5dde7;
+    border-radius: 3px;
+    border: 0px;
+    background-color:#8b22a5;
+    padding: 10px 10px;
+    min-width: 150px;
+    font-size: 15px;
+    left: 1000px;
+    position: absolute;
+
+}
+
+.navButtonOne:hover{
+    background-color: #e2df99;
+}
+
+.navButtonTwo{
+    color: #e5dde7;
+    border-radius: 3px;
+    border: 0px;
+    background-color:#8b22a5;
+    padding: 10px 10px;
+    min-width: 150px;
+    font-size: 15px;
+    right:1000px;
+    position: absolute;
+}
+
+.navButtonTwo:hover{
     background-color: #e2df99;
 }
 .padding{
